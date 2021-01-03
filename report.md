@@ -15,11 +15,11 @@ Localization is said to adapt a product to the point of feeling like it was crea
 
 The answer to this is simple, yet multivariant and unique for each product. Some organizations have far more capital that can be spent on localization at the early stages of a product's development, while others simply don't have the resources to do so. Some products don't have a strong outlook in certain markets, and the investment doesn't have a promising enough return. And with the growth of language technology in high-resource languages, the disparity between localization processes accross languages can seem larger than ever before. These are just few of many reasons.
 
-To mitigate some of these trouble areas in localization, globally-minded teams have developed an increasing number of solutions. Some products are delivered to the subset of world languages that makes sense for their projections. Developers leverage internationalization libraries to format certain pieces of data according to known regional standards, technically increasing the number of offered locales at a minimum cost. Other organizations, like Mozilla Firefox, crowdsource their localizations from the loyal community that uses and depends on their product, potentially offering a record-breaking number of localizations at the cost of managing a volunteer community<sup>[1](#references)</sup>. 
+To mitigate some of these trouble areas in localization, globally-minded teams have developed an increasing number of solutions. Some products are delivered to the subset of world languages that makes sense for their projections. Developers leverage internationalization libraries to format certain pieces of data according to known regional standards, technically increasing the number of offered locales at a minimum cost. Other organizations, like Mozilla Firefox, crowdsource their localizations from the loyal community that uses and depends on their product, potentially offering an incredible number of localizations at the cost of managing a volunteer community. 
 
 If organizations take varied approaches to localization due to questions of ROI, is there a way of measuring the return on the investment? Given that localization covers such a large set of considerations, it will de difficult to attribute increases in products sold or daily active users to any individual implementation beyond a case-by-case basis. But this is not an admission of defeat!
 
-Perhaps surveys of user satisfaction regarding localization could provide qualitative and/or quantitative feedback to assess the return on investment in localization. But even then, can users tell the difference between high- and low-investment localizations? Do they even care? Some studies indicate that the bar for localization quality may be lower than expected<sup>[2](#references)</sup>. Mozilla even discovered recently that they were offering identical localized data for two different Spanish locales due to a miscommunication between volunteer localization communities (which was a catalyst for this very study).
+Perhaps surveys of user satisfaction regarding localization could provide qualitative and/or quantitative feedback to assess the return on investment in localization. But even then, can users tell the difference between high- and low-investment localizations? Do they even care? Some studies indicate that the bar for localization quality may be lower than expected<sup>[1](#references)</sup>. Mozilla even discovered recently that they were offering identical localized data for two different Spanish locales due to a miscommunication between volunteer localization communities (which was a catalyst for this very study).
 
 ## Proposition
 
@@ -27,13 +27,13 @@ This study proposes an evaluation of localization ROI by way of analyzing parall
 
 For the purpose of this study, "value" is defined as the unique combination and frequency of linguistic features found in a localization, characteristic of a specific locale. Localizations that demonstrate a greater number of unique features and a higher frequency of instances of those features would be the most linguistically distinct and, therefore, more valuable from a purely textual standpoint. This study assumes two premises: _a)_ all localizations evaluated in the study are considered to be high quality and reflective of the linguistic nature of the locale and _b)_ where the features of a locale can be found in another, that locale provides no additional material value to a client of localization services. Only where a locale can be shown to contain unique, distinguishable features, does that locale provide a material value for a client. 
 
-Recent advances in machine translation have brought about a need for fast, reliable translation quality assessment. Automatic systems, like BLEU, make use of computational power and collections of translated corpora to produce translation quality scores almost instantaneouly<sup>[3](#references)</sup>. Systems like BLEU are not without cause for caution, but they have been shown to produce translation qualty scores similar to those produced by manual methods of assessment<sup>[4](#references)</sup>. In addition to a purely quantitative analysis, other text processing techniques, such as templating, allow us to take a cursory look at the tangible differences between translations. 
+Recent advances in machine translation have brought about a need for fast, reliable translation quality assessment. Automatic systems, like BLEU, make use of computational power and collections of translated corpora to produce translation quality scores almost instantaneouly<sup>[2](#references)</sup>. Systems like BLEU are not without cause for caution, but they have been shown to produce translation qualty scores similar to those produced by manual methods of assessment<sup>[3](#references)</sup>. In addition to a purely quantitative analysis, other text processing techniques, such as templating, allow us to take a cursory look at the tangible differences between translations. 
 
 Making use of translation memory data, this study assesses the value of sibling locales at a purely textual level by applying the BLEU metric and templating techniques.
 
 ## Data
 
-The main data for this study comes from Mozilla's translation repositories for the Firefox browser in a standard TMX file format<sup>[5](#references)</sup>. The Spanish locales available are `es-AR` (Argentina), `es-CL` (Chile), `es-ES` (Spain), and `es-MX` (Mexico). Mozilla offers an International Spanish localization, but that localization is almost entirely identical to the `es-ES` localization, providing no linguistically-valuable insight (this discovery was the initial cause for this study). Therefore, the International Spanish locale is excluded from this study.
+The main data for this study comes from Mozilla's translation repositories for the Firefox browser in a standard TMX file format<sup>[4](#references)</sup>. The Spanish locales available are `es-AR` (Argentina), `es-CL` (Chile), `es-ES` (Spain), and `es-MX` (Mexico). Mozilla offers an International Spanish localization, but that localization is almost entirely identical to the `es-ES` localization, providing no linguistically-valuable insight (this discovery was the initial cause for this study). Therefore, the International Spanish locale is excluded from this study.
 
 To ensure the simplest and clearest results, many translation units were removed from the data used for this study.
 
@@ -50,7 +50,7 @@ It should be noted that many of the strings removed likely contain real linguist
 
 All translation units with a source string identical to that of another translation unit are removed to avoid skewing results by way of double-counting of a particular linguistic phenomenon. Rather than including these segments, they are set aside to be used later to establish a baseline of variance. Given that these translations have the same source text and target locale, the linguistic differences between them should be inconsequential, at least with regard to the translation's acceptability. Many of the duplicate source strings have identical translations, but some translations within the same locale contain text variation.
 
-In addition to the Mozilla translation data, this study uses Microsoft's My Visual Studio Translation and UI Strings Glossaries<sup>[6](#references)</sup>, which is available for free with a Visual Studio Dev Essentials account. Unfortunately, there were not enough matching strings between Microsoft's Spanish locales to perform an analysis for each sibling locale pair. The methodology for this study is replicated on `es-ES` and `es-MX` locale pair in the Microsoft data to see if the results found in the Mozilla data are consistent in another independent data set.
+In addition to the Mozilla translation data, this study uses Microsoft's My Visual Studio Translation and UI Strings Glossaries<sup>[5](#references)</sup>, which is available for free with a Visual Studio Dev Essentials account. Unfortunately, there were not enough matching strings between Microsoft's Spanish locales to perform an analysis for each sibling locale pair. The methodology for this study is replicated on `es-ES` and `es-MX` locale pair in the Microsoft data to see if the results found in the Mozilla data are consistent in another independent data set.
 
 ## Methodology
 
@@ -136,7 +136,7 @@ For Mozilla's locales, BLEU scores averaged between 56 and 59. For other BLEU st
 
 According to Google Cloud's Translation Guide, BLEU scores in the 50-60 range reflect "very hgih quality, accurate, and fluent translations," which our data happens to be. When BLEU scores are applied to machine translation output, scores in this range would, in fact, be absurdly high. But these BLEU scores reflect the very nature of our data: "very high quality, adecuate, and fluent [Spanish] translations" of the Firefox browser.
 
-**Google Cloud's Translation Guides Table**<sup>[7](#references)</sup>
+**Google Cloud's Translation Guides Table**<sup>[6](#references)</sup>
 
 ![Google Cloud Table](img/googlecloud.png)
 
@@ -251,10 +251,9 @@ Thank you to Mozilla's L10n Drivers team for asking me to participate in this st
 
 ## References
 
-1. Mozilla breaks localization record
-2. Localization quality acceptance ammong users 
-3. [BLEU](https://www.aclweb.org/anthology/P02-1040.pdf).
-4. BLEU vs Human
-5. Mozilla Translation Memories. [Transvision](https://transvision.mozfr.org/).
-6. Microsoft Visual Studio Translation and UI Strings Glossaries. [My Visual Studio downloads](https://my.visualstudio.com/downloads).
-7. Google Cloud Translation How-to Guides. [Evaluating Models](https://cloud.google.com/translate/automl/docs/evaluate#interpretation).
+1. Donald A. DePalma, Rebecca Ray. Millennials around the Globe: How Audience Age Affects Global Content Strategy. 2015. [Source](https://insights.csa-research.com/reportaction/28451/Marketing?SearchTerms=Millennials).
+2. Papineni, K., et al. BLEU: a Method for Automatic Evaluation of Machine Translation. 2002. [Source](https://www.aclweb.org/anthology/P02-1040.pdf).
+3. Coughlin, D. Correlating Automated and Human Assessments of Machine Translation Quality. 2003. [Source](http://www.mt-archive.info/MTS-2003-Coughlin.pdf).
+4. Mozilla Translation Memories. [Transvision](https://transvision.mozfr.org/).
+5. Microsoft Visual Studio Translation and UI Strings Glossaries. [My Visual Studio downloads](https://my.visualstudio.com/downloads).
+6. Google Cloud Translation How-to Guides. Evaluating Models. [Source](https://cloud.google.com/translate/automl/docs/evaluate#interpretation).
