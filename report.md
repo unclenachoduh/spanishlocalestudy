@@ -13,19 +13,19 @@ _An analysis of the linguistic distinctiveness between Spanish locale variants i
 
 Localization is said to adapt a product to the point of feeling like it was created in and for a target market. The first indication of Localization's meticulous effort is the language code, which includes an indicator for language followed by an indicator for nation or region (eg. `en-CA`: English Canada). A product can be tailored, not only for an English-speaking market, but to the Canadian English-speaking market. But if locale-specific customization is the unique strength of Localization, then why do the locale offerings vary from localized product to localized product?
 
-The answer to this is simple, yet multivariant and unique for each product. Some organizations have far more capital that can be spent on localization at the early stages of a product's development, while others simply don't have the resources to do so. Some products don't have a strong outlook in certain markets, and the investment doesn't have a promising enough return. And with the growth of language technology in high-resource languages, the disparity between localization processes accross languages can seem larger than ever before. These are just few of many reasons.
+The answer to this is simple, yet multivariant and unique for each product. Some organizations have far more capital that can be spent on localization at the early stages of a product's development, while others simply don't have the resources to do so. Some products don't have a strong outlook in certain markets, and the investment doesn't have a promising enough return. And with the growth of language technology in high-resource languages, the disparity between localization processes accross languages can seem larger than ever before. These are just a few of many reasons.
 
 To mitigate some of these trouble areas in localization, globally-minded teams have developed an increasing number of solutions. Some products are delivered to the subset of world languages that makes sense for their projections. Developers leverage internationalization libraries to format certain pieces of data according to known regional standards, technically increasing the number of offered locales at a minimum cost. Other organizations, like Mozilla Firefox, crowdsource their localizations from the loyal community that uses and depends on their product, potentially offering an incredible number of localizations at the cost of managing a volunteer community. 
 
 If organizations take varied approaches to localization due to questions of ROI, is there a way of measuring the return on the investment? Given that localization covers such a large set of considerations, it will de difficult to attribute increases in products sold or daily active users to any individual implementation beyond a case-by-case basis. But this is not an admission of defeat!
 
-Perhaps surveys of user satisfaction regarding localization could provide qualitative and/or quantitative feedback to assess the return on investment in localization. But even then, can users tell the difference between high- and low-investment localizations? Do they even care? Some studies indicate that the bar for localization quality may be lower than expected<sup>[1](#references)</sup>. Mozilla even discovered recently that they were offering identical localized data for two different Spanish locales due to a miscommunication between volunteer localization communities (which was a catalyst for this very study).
+Perhaps surveys of user satisfaction regarding localization could provide qualitative and/or quantitative feedback to assess the return on investment in localization. But even then, can users tell the difference between high- and low-investment localizations? Do they even care? A 2015 report indicated that the bar for localization quality may be lower than expected<sup>[1](#references)</sup>. The major catalyst for this very study was Mozilla's discovery that they were offering identical localized data for two different Spanish locales due to a miscommunication between volunteer localization communities—a problem you wouldn't expect to occur in a user-driven localization process.
 
 ## Proposition
 
 This study proposes an evaluation of localization ROI by way of analyzing parallel translations of sibling locales (ie. distinct locales of a single language). By evaluating the translations of sibling locales, this study intends to measure the value of localizations at the text level. 
 
-For the purpose of this study, "value" is defined as the unique combination and frequency of linguistic features found in a localization, characteristic of a specific locale. Localizations that demonstrate a greater number of unique features and a higher frequency of instances of those features would be the most linguistically distinct and, therefore, more valuable from a purely textual standpoint. This study assumes two premises: _a)_ all localizations evaluated in the study are considered to be high quality and reflective of the linguistic nature of the locale and _b)_ where the features of a locale can be found in another, that locale provides no additional material value to a client of localization services. Only where a locale can be shown to contain unique, distinguishable features, does that locale provide a material value for a client. 
+For the purpose of this study, "value" is defined as the unique combination and frequency of linguistic features found in a localization, characteristic of a specific locale. Localizations that demonstrate a greater number of unique features and a higher frequency of instances of those features would be the most linguistically distinct and, therefore, more valuable from a purely textual standpoint. This study assumes two premises: _a)_ all localizations evaluated in the study are considered to be high-quality and reflective of the linguistic nature of the locale and _b)_ where the features of a locale can be found in another, that locale provides no additional material value to a client of localization services. Only where a locale can be shown to contain unique, distinguishable features, does that locale provide a material value for a client. 
 
 Recent advances in machine translation have brought about a need for fast, reliable translation quality assessment. Automatic systems, like BLEU, make use of computational power and collections of translated corpora to produce translation quality scores almost instantaneouly<sup>[2](#references)</sup>. Systems like BLEU are not without cause for caution, but they have been shown to produce translation qualty scores similar to those produced by manual methods of assessment<sup>[3](#references)</sup>. In addition to a purely quantitative analysis, other text processing techniques, such as templating, allow us to take a cursory look at the tangible differences between translations. 
 
@@ -58,13 +58,13 @@ This study consists of three phases of analysis: ***Similarity***, ***Difference
 
 ### Similarity
 
-**High Confidence Similarity: Perfect Matches**
+**High-confidence Similarity: Perfect Matches**
 
-It is sometimes the case that a pair of parallel translations by different translators are identical, even more so when the domain of the translation is highly-specialized--as is the case with software translation resources. When parallel translations for different target locales are identical, we know for certain that the single translation is acceptable within the conventions of either locale. These identical translations are called "perfect matches" in this study, and are used to assess the high-confidence similarity between sibling locales.
+It is sometimes the case that a pair of parallel translations by different translators are identical, even more so when the domain of the translation is highly-specialized—as is the case with software translation resources. When parallel translations for different target locales are identical, we know for certain that the single translation is acceptable within the conventions of either locale. These identical translations are called "perfect matches" in this study, and are used to assess the high-confidence similarity between sibling locales.
 
-**Lower-confidence Similarity: BLEU Scores**
+**Low-confidence Similarity: BLEU Scores**
 
-In this study, the Bilinguial Evaluation Understudy (BLEU score) is used as the means of measuring translation similarity when parallel translations are not identical. In these cases, we rely on the historic use of the BLEU score as a means of measuring translation acceptability to warrant our use. Acceptability is the appropriateness of a translation for the recieving audience. In this case, the more a candidate translation resembles a gold standard translation in the target locale (by way of BLEU score), the higher that translation's acceptability. The BLEU scores in this study were calculated using NLTK's BLEU module.
+In this study, the Bilinguial Evaluation Understudy (BLEU score) is used as the means of measuring translation similarity when parallel translations are not identical. In these cases, we rely on the historic use of the BLEU score as a means of measuring translation acceptability to warrant our use. Acceptability is the appropriateness of a translation for the recieving audience. In this case, the more a candidate translation resembles a gold standard translation in the target locale (by way of BLEU score), the higher that translation's acceptability. The BLEU scores in this study were calculated using NLTK's BLEU module<sup>[6](#references)</sup>.
 
 Because the BLEU score is an automated metric, it provides no qualitative evaluation of translation similarity but simply a measure of similarity between the superficial tokens of the translations. For these reasons, we make the distinction between the perfect matches "high-confidence" and the BLEU score's "low-confidence" similarity.
 
@@ -72,9 +72,9 @@ Because the BLEU score is an automated metric, it provides no qualitative evalua
 
 **Language Templates**
 
-Phrase templates help identify the surface tokens that form distinguishing structural features of a collection of texts. Templates become a means of focusing on what is congruent accross locales and what distinguishing features (particularly consistent ones) exist between them. 
+Language templates help identify the surface tokens that form distinguishing structural features of a collection of texts. Templates become a means of focusing on what is congruent accross locales and what distinguishing features (particularly consistent ones) exist between them. 
 
-To generate the templates of this study, for each non-perfect match all shared word sequences (n-grams) are identified between sibling translations. Starting from largest shared word sequences and continuing to the smallest, the matching sequences between the parrallel translations are removed. This leaves a simple template of changes between locale variants on the word-sequence level. These templates are simplified and then counted for occurrences. The templates with the most occurrences represent the changes that happen most frequently between locale variants. Where templates have a high frequency in only one direction (from Locale X to Locale Y), a material linguistic distinction between locales has been identified.
+To generate the templates of this study, for each non-perfect match all shared word sequences are identified between sibling translations. Starting from largest shared word sequences and continuing to the smallest, the matching sequences between the parrallel translations are removed. This leaves a simple template of changes between locale variants on the word-sequence level. These templates are simplified and then counted for occurrences. The templates with the most occurrences represent the changes that happen most frequently between locale variants. Where templates have a high frequency in only one direction (from Locale X to Locale Y), a material linguistic distinction between locales has been identified.
 
 This method does have some limitations as some templates contain a combination of different linguistic phenomena that would be best evaluated on an individual basis for best quantitative results. This level of detail is beyond the scope of this study. More robust processing or even manual analysis of the differences between locales would provide a clearer look into the patterns of difference between locales. The language templating method used in this study still provides some interesting insight.
 
@@ -95,7 +95,7 @@ In the Mozilla data, 1743 of 7620 shared translations between all four Spanish v
 | es-AR | ~     | 0.385 | 0.405 | 0.416 | 0.402 |
 | es-CL | 7805  | ~     | 0.388 | 0.427 | 0.400 |
 | es-ES | 14343 | 7715  | ~     | 0.452 | 0.415 |
-| es-MX | 12355 | 8029  | 12651 | X     | 0.426 |
+| es-MX | 12355 | 8029  | 12651 | ~     | 0.426 |
 
 **_Bottom Left:_** The number of segments compared.  
 **_Top Right:_** Ratio of perfect matches.   
@@ -136,7 +136,7 @@ For Mozilla's locales, BLEU scores averaged between 56 and 59. For other BLEU st
 
 According to Google Cloud's Translation Guide, BLEU scores in the 50-60 range reflect "very hgih quality, accurate, and fluent translations," which our data happens to be. When BLEU scores are applied to machine translation output, scores in this range would, in fact, be absurdly high. But these BLEU scores reflect the very nature of our data: "very high quality, adecuate, and fluent [Spanish] translations" of the Firefox browser.
 
-**Google Cloud's Translation Guides Table**<sup>[6](#references)</sup>
+**Google Cloud's Translation Guides Table**<sup>[7](#references)</sup>
 
 ![Google Cloud Table](img/googlecloud.png)
 
@@ -239,11 +239,11 @@ If any conclusion can be made regarding locale similiarity and difference, it is
 
 The implications of this study leave some work yet to be done. The methods for this study are precursory; more intensive processing could reveal greater detail into the specific value provided by sibling localizations. Or perhaps manual analysis by skilled linguists is necessary before that value can be revealed.
 
-The number of languages that are heavily serviced within Localization with multiple locales may be a bit small for much more research to be conducted on this topic. Nonetheless, there are a numbner of practical applications for the localization industry as well as adjacent linguistically-focused fields.
+The number of languages that are heavily serviced within Localization with multiple locales may be a bit small for much more research to be conducted on this topic. Nonetheless, there are a number of practical applications for the localization industry as well as adjacent linguistically-focused fields.
 
 The results of this study in particular can be used within the realm of localization to make data-driven decisions regarding the Spanish locale offerings of a software produce. For teams that are expanding, these results indicate that previously-existing localization data can be leveraged to move into a new Spanish-speaking market. Based on perfect matched alone, your product is already halfway to it's next Spanish locale. Teams that are consolidating efforts could use the methods from this study to identify the most central Spanish locale to their userbase and provide one "very high quality, adecuate, and fluent" Spanish translation. With some further work on the language templating method, the minimum edit distance between locales could be measured to help localization-minded teams project the cost of investment in a new locale. 
 
-In terms of l10n-adjacent applications, particularly ambitious teams may look into the posibility of formalizing the differences between locales or applying deep processing methods to generate locale-specific natural language content. Perhaps these kinds of hopeful connections to this study are a bit enthusiastic or, better yet, not imaginative enough. 
+In terms of l10n-adjacent applications, particularly ambitious teams may look into the posibility of formalizing the differences between locales or applying deep processing methods to generate locale-specific natural language content. Perhaps these kinds of hopeful connections to this study are a bit enthusiastic or, more optimistically, not imaginative enough. 
 
 ## Acknowledgements
 
@@ -256,4 +256,5 @@ Thank you to Mozilla's L10n Drivers team for asking me to participate in this st
 3. Coughlin, D. Correlating Automated and Human Assessments of Machine Translation Quality. 2003. [Source](http://www.mt-archive.info/MTS-2003-Coughlin.pdf).
 4. Mozilla Translation Memories. [Transvision](https://transvision.mozfr.org/).
 5. Microsoft Visual Studio Translation and UI Strings Glossaries. [My Visual Studio downloads](https://my.visualstudio.com/downloads).
-6. Google Cloud Translation How-to Guides. Evaluating Models. [Source](https://cloud.google.com/translate/automl/docs/evaluate#interpretation).
+6. Natural Language Toolkit: BLUE Score. NLTK 3.5 Documentation. [Source](https://www.nltk.org/_modules/nltk/translate/bleu_score.html)
+7. Google Cloud Translation How-to Guides. Evaluating Models. [Source](https://cloud.google.com/translate/automl/docs/evaluate#interpretation).
